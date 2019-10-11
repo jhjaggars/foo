@@ -1,5 +1,13 @@
 package main
 
+import (
+	"fmt"
+	"time"
+)
+
 func main() {
-	panic("I'm busted on purpose!")
+	for {
+		fmt.Println("I'm just gonna lay down...")
+		time.Sleep(1 * time.Hour)
+	}
 }
