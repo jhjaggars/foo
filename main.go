@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/prometheus/client_golang/prometheus"
@@ -15,6 +16,7 @@ var counter = promauto.NewCounter(prometheus.CounterOpts{
 
 func main() {
 	handler := func(w http.ResponseWriter, r *http.Request) {
+		fmt.Println("got called")
 		counter.Inc()
 		w.WriteHeader(http.StatusOK)
 	}
